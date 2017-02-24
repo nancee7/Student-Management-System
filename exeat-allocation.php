@@ -11,7 +11,7 @@
 
 <body>
    <h1>EXEAT ALLOCATION </h1>
-	<form class="form-horizontal" role="form" action="exeat-conff.php">   
+	<form class="form-horizontal" role="form" method="post" action="exeat-conff.php">   
 	 
 	               <!--make exeat type a drop down menu-->    
 		<div class="form-group">    
@@ -22,9 +22,9 @@
 	    </div> 
 
         <div class="form-group">    
-	        <label for="destination" class="col-sm-2 control-label">Destination</label>      
+	        <label for="destination" class="col-sm-2 control-label">Matric Number</label>      
 	            <div class="col-md-6">        
-	                <input type="text" class="form-control" id="destination" name="destination" placeholder="Enter Your Destination"/>     
+	                <input type="text" class="form-control" id="matric_number" name="matric_number" placeholder="Enter Your Matric Number"/>     
 	            </div>  
 	    </div> 
 

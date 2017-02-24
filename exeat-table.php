@@ -1,46 +1,57 @@
 <!doctype html>
 <html>
-	
-  <head>
 
-         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
-         <link rel="stylesheet" type="text/css" href="bootstrap/js/bootstrap.js">
+<head>
 	
-  	
-  </head>
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+         <link rel="stylesheet" type="text/css" href="bootstrap/js/bootstrap.js">
+
+
+</head>
 
 
 <body>
 	
-    <table class="table table-bordered" >    
-        <caption>LIST OF REQUESTS</caption>  
-            <thead>      
-                <tr>
-                   <th>S/N</th>    
-                   <th>MATRIC-NUMBER</th>       
-                   <th>EXEAT TYPE</th> 
-                   <th>DESTINATION</th>       
-                   <th>DAY OF DEPARTURE</th> 
-                   <th>DAY OF RETURN</th>       
-                   <th>REASON FOR EXEAT</th> 
-                      
-                </tr>  
-            </thead>  
-            <tbody>    
-                <tr>      
-                    <td>Tanmay</td>      
-                    <td>12</td>  
-                    <td>T74</td>      
-                    <td>959</td>  
-                    <td>994</td>      
-                    <td>9090</td> 
-                    <td button type="button" class="btn btn-primary">APPROVE</button></td>      
-                    <td button type="button" class="btn btn-default">DENY</button></td> 
+<?php
 
-                </tr>     
-                
-            </tbody>
-    </table> 
+ $servername="localhost";
+ $username="nancy";
+ $password="ipole";
+ $dbname="sms";
+ $tbl_name="exeat_and_pass";
+
+ $conn = mysqli_connect("$servername", "$username", "$password","$dbname") or die ("cannot connect");
+
+
+$query1=mysqli_query($conn, "SELECT * FROM exeat_and_pass WHERE `exeat_status` = 'pending'");
+echo "<table><tr><th>S/N</th><th>MATRIC NUMBER</th><th>EXEAT TYPE</th><th>DESTINATION</th><th>DAY OF DEPARTURE</th><th>DAY OF RETURN</th><th>REASON FOR EXEAT</th>";
+while($query2=mysqli_fetch_array($query1))
+		{
+		echo "<tr><th>".$query2['id']."</th>";	
+		echo "<th>".$query2['matric_number']."</th>";
+		echo "<th>".$query2['exeat_type']."</th>";
+		echo "<th>".$query2['destination']."</th>";
+		echo "<th>".$query2['day_of_departure']."</th>";
+		echo "<th>".$query2['day_of_arrival']."</th>";
+		echo "<th>".$query2['reason_for_exeat']."</th>";
+		echo "<th><a href='approve.php?id=".$query2['id']."'>APPROVE</a></th>";
+		echo "<th><a href='deny.php?id=".$query2['id']."'>DENY</a></th></tr>";
+		}
+
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
 
 </body>
 

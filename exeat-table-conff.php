@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
+
+<head>
 	
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+         <link rel="stylesheet" type="text/css" href="bootstrap/js/bootstrap.js">
+
+
+</head>
+
+
 <body>
 	
 <?php
@@ -23,10 +32,10 @@ while($query2=mysqli_fetch_array($query1))
 		echo "<th>".$query2['exeat_type']."</th>";
 		echo "<th>".$query2['destination']."</th>";
 		echo "<th>".$query2['day_of_departure']."</th>";
-		echo "<th>".$query2['day_of_return']."</th>";
-		echo "<th>".$query2['reason_for_exeat']."</th></tr>";
-		echo "<tr><td><a href='approve.php?id=".$query2['id']."'>APPROVE</a></td>";
-		echo "<td><a href='deny.php?id=".$query2['id']."'>DENY</a></td></tr>";
+		echo "<th>".$query2['day_of_arrival']."</th>";
+		echo "<th>".$query2['reason_for_exeat']."</th>";
+		echo "<th><a href='approve.php?id=".$query2['id']."'>APPROVE</a></th>";
+		echo "<th><a href='deny.php?id=".$query2['id']."'>DENY</a></th></tr>";
 		}
 
 
