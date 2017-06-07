@@ -6,7 +6,7 @@ $servername="localhost";
 $username="nancy";
 $password="ipole";
 $dbname="sms";
-$tbl_name="user";
+$tbl_name="hod";
 
 
 // create connection
@@ -16,10 +16,10 @@ $conn = mysqli_connect("$servername", "$username", "$password","$dbname") or die
 
 // to protect mysql injection and declare variables
 
-$matric_number = mysqli_real_escape_string($conn, $_POST['matric_number']);
+$staff_id = mysqli_real_escape_string($conn, $_POST['staff_id']);
 $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-$sql="SELECT * FROM $tbl_name WHERE matric_number='$matric_number' and password='$password'";
+$sql="SELECT * FROM $tbl_name WHERE staff_id='$staff_id' and password='$password'";
 $result=mysqli_query($conn, $sql);
 
 //mysql_num_row is counting table row
@@ -30,9 +30,9 @@ if ($count==1) {
 	//register $matric_number, $password and redirect to file "welcome.php"
 
 session_start();
-$_SESSION["matric_number"] = $matric_number;
+$_SESSION["staff_id"] = $staff_id;
 $_SESSION["password"] = $password;
-header("location:home.php");
+header("location:exeat-table");
 
 }
 

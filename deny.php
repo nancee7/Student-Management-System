@@ -2,15 +2,13 @@
 	
 <?php
 
-
-
 include('configuration.php');
 
 if(isset($_GET['id']))
 			{
 			$id=$_GET['id'];
 
-			$query3=mysqli_query($conn, "update exeat_and_pass set exeat_status = 'hodApproved' where id='$id'");
+			$query3=mysqli_query($conn, "update exeat_and_pass set exeat_status = 'hodDenied' where id='$id'");
 			if($query3)
 			{
 			header('location:exeat_table.php');

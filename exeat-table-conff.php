@@ -24,7 +24,7 @@
 
 
 $query1=mysqli_query($conn, "SELECT * FROM exeat_and_pass WHERE `exeat_status` = 'pending'");
-echo "<table><tr><th>S/N</th><th>MATRIC NUMBER</th><th>EXEAT TYPE</th><th>DESTINATION</th><th>DAY OF DEPARTURE</th><th>DAY OF RETURN</th><th>REASON FOR EXEAT</th>";
+echo "<table  border='2'><tr><th>S/N</th><th>MATRIC NUMBER</th><th>EXEAT TYPE</th><th>DESTINATION</th><th>DAY OF DEPARTURE</th><th>DAY OF RETURN</th><th>REASON FOR EXEAT</th></tr>";
 while($query2=mysqli_fetch_array($query1))
 		{
 		echo "<tr><th>".$query2['id']."</th>";	
@@ -35,7 +35,7 @@ while($query2=mysqli_fetch_array($query1))
 		echo "<th>".$query2['day_of_arrival']."</th>";
 		echo "<th>".$query2['reason_for_exeat']."</th>";
 		echo "<th><a href='approve.php?id=".$query2['id']."'>APPROVE</a></th>";
-		echo "<th><a href='deny.php?id=".$query2['id']."'>DENY</a></th></tr>";
+		echo "<th><a href='deny.php?id=".$query2['id']."'>DENY</a></th></tr></table>";
 		}
 
 

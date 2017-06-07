@@ -1,14 +1,12 @@
-<!doctype html>
-<html>
+
 	
-<body>
-	
-<?
+<?php
+ 
  $servername="localhost";
  $username="nancy";
  $password="ipole";
  $dbname="sms";
- $tbl_name="exeat_and_pass";
+ $tbl_name="user";
 
  $conn = mysqli_connect("$servername", "$username", "$password","$dbname") or die ("cannot connect");
 
@@ -18,10 +16,3 @@
 
 
 
-</body>
-
-
-
-
-
-</html>
